@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientForms">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/hvdhb">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ER Admittance"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GP:"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/GPAdmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter GP"
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="70dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Religion:"
+        android:textColor="@color/black"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="50dp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/ReligionAdmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="235dp"
+        android:hint="Enter Religion"
+        android:layout_marginLeft="105dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="300dp"
+        android:text="Previous Medical History"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/PrevMedHis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textImeMultiLine"
+        android:minLines="4"
+        android:maxLines="6"
+        android:hint="Enter any Medical afflictions here"
+        android:layout_marginTop="310dp"
+        android:layout_marginLeft="50dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Incident Report"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="50dp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/Incident"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textImeMultiLine"
+        android:minLines="4"
+        android:maxLines="6"
+        android:hint="Enter What happened here"
+        android:layout_marginTop="460dp"
+        android:layout_marginLeft="50dp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/FormSubmitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="580dp"
+        android:backgroundTint="@color/dhbteal"
+        android:text="Submit"
+        android:textStyle="bold"></Button>
+
+</RelativeLayout>

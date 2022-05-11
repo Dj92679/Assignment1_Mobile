@@ -1,0 +1,92 @@
+    <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/hvdhb">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/ChangeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Borderless"
+        android:textColor="@color/black"
+        android:text="Change Name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="220dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/ChangeAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Borderless"
+        android:textColor="@color/black"
+        android:text="Change Address"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="290dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/ChangeContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Borderless"
+        android:textColor="@color/black"
+        android:text="Change Contact Details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="360dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/ChangeEDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Borderless"
+        android:textColor="@color/black"
+        android:text="Change Emergency Details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="430dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/DeleteAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Account"
+        android:textColor="@color/red"
+        style="@style/Borderless"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp">
+
+    </Button>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientHomeScreen">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/hvdhb">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home Screen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username Placeholder"
+        android:layout_marginTop="190dp">
+
+    </TextView>
+
+   <Button
+       android:id="@+id/PatientSettings"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       style="@style/Borderless"
+       android:text="Settings"
+       android:textColor="@color/dhbteal"
+       android:layout_marginTop="180dp"
+       android:textSize="12dp"
+       android:layout_marginLeft="322dp">
+
+   </Button>
+
+    <Button
+        android:id="@+id/CreateFormBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="@color/dhbteal"
+        android:text="Create a Form"
+        android:textStyle="bold">
+
+    </Button>
+
+    <Button
+        android:id="@+id/ViewFormBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dhbteal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:text="View Forms"
+        android:textStyle="bold">
+
+    </Button>
+
+
+
+
+
+</RelativeLayout>

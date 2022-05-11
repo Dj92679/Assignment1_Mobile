@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorMainScreen">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:src="@drawable/hvdhb">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home Page"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:fontFamily="sans-serif-black">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username Placeholder"
+        android:layout_marginTop="190dp">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Doctor Home Page"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Patient ER Forms (Placeholder)"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/DoctorSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Borderless"
+        android:text="Settings"
+        android:textColor="@color/dhbteal"
+        android:layout_marginTop="180dp"
+        android:textSize="12dp"
+        android:layout_marginLeft="322dp">
+
+    </Button>
+
+
+</RelativeLayout>

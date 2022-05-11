@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientRegister"
+    style="@style/Theme.AppCompat.NoActionBar">
+
+    <ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="100dp"
+    android:src="@drawable/hvdhb">
+
+    </ImageView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/RegisterTitle"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="170dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/Username"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterUser"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="160dp"
+        android:fontFamily="sans-serif-black"
+        android:hint="Enter Username"
+        android:textSize="12dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"
+        android:text="@string/Password"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterPass"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Password"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="165dp"
+        android:textSize="12dp"
+        android:inputType="textPassword">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:text="First Name:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        >
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterFName"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter First Name"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="175dp"
+        android:textSize="12dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="290dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Surname:"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Surname"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="165dp"
+        android:textSize="12dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:text="Address:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Address"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="160dp"
+        android:textSize="12dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:text="Age:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterAge"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Age"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="360dp"
+        android:layout_marginLeft="135dp"
+        android:textSize="12dp"
+        android:inputType="number">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:text="Date Of Birth:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Birth Date"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="190dp"
+        android:textSize="12dp"
+        android:inputType="date">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:text="Gender:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterGender"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Gender"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="440dp"
+        android:layout_marginLeft="150dp"
+        android:textSize="12dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="490dp"
+        android:text="Phone Number:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="480dp"
+        android:fontFamily="sans-serif-black"
+        android:hint="Enter Number"
+        android:textSize="12dp"
+        android:inputType="number">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="530dp"
+        android:text="Emergency Contact:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterEContact"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Emergency Contact"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="230dp"
+        android:textSize="12dp">
+
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="570dp"
+        android:text="Emergency Number:"
+        android:layout_marginLeft="100dp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/P_RegisterENumber"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:hint="Enter Ermergency Number"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="560dp"
+        android:layout_marginLeft="225dp"
+        android:textSize="12dp"
+        android:inputType="number">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/P_RegisterSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:backgroundTint="@color/dhbteal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="610dp">
+
+    </Button>
+
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Assignment 1</string>
+    <string name="Emergency">If it is an Emergency, call 111</string>
+    <string name="Username">Username:</string>
+    <string name="Password">Password:</string>
+    <string name="RegisterTitle">Register</string>
+</resources>
