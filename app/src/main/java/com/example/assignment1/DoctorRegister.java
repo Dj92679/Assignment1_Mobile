@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class DoctorRegister extends AppCompatActivity {
 
     Button D_RegisterSubmit;
     EditText Username, Password, D_Name, D_Surname, D_RegNo, D_Number;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
