@@ -4,4 +4,23 @@
     <string name="Username">Username:</string>
     <string name="Password">Password:</string>
     <string name="RegisterTitle">Register</string>
-</resources>
+    <string name="P_Username">Patient Username</string>
+    <string name="P_Password">Patient Password</string>
+    <string name="P_FName">Patient First Name</string>
+    <string name="P_Surname">Patient Surname</string>
+    <string name="P_Age">Patient Age</string>
+    <string name="P_DOB">Patient Date Of Birth</string>
+    <string name="P_Address">Patient Address</string>
+    <string name="P_Gender">Patient Gender</string>
+    <string name="P_PhoneNumber"><Pati></Pati>ent Phone Number</string>
+    <string name="P_EmergencyContact">Patient Emergency Contact</string>
+    <string name="P_EmergencyNumber">Patient Emergency Number</string>
+    <string name="D_Username">Doctor Username</string>
+    <string name="D_Password">Doctor Password</string>
+    <string name="D_FName">Doctor First Name</string>
+    <string name="D_Surname">Doctor Surname</string>
+    <string name="D_RegNo">Doctor Registration Number</string>
+    <string name="D_PhoneNumber">Doctor Phone Number</string>
+
+
+    </resources>
