@@ -19,8 +19,7 @@ public class PatientRegister extends AppCompatActivity {
 
     Button P_RegisterSubmit;
     EditText Username, Password, Name, Surname,Address, Age, DOB, Gender, PhoneNumber, EContact, ENumber;
-    String patientUsername, patientPassword, patientFirstName, patientSurname, patientAddress, patientGender, patientEmergencyContact;
-    int patientAge, patientDOB, patientPhoneNumber, patientEmergencyNumber;
+    String patientUsername, patientPassword, patientFirstName, patientSurname, patientAddress, patientGender, patientEmergencyContact, patientAge, patientDOB, patientPhoneNumber, patientEmergencyNumber;;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -41,31 +40,32 @@ public class PatientRegister extends AppCompatActivity {
         EContact = findViewById(R.id.P_RegisterEContact);
         ENumber = findViewById(R.id.P_RegisterENumber);
 
-        patientUsername = Username.getText().toString();
-        patientPassword = Password.getText().toString();
-        patientFirstName = Name.getText().toString();
-        patientSurname = Surname.getText().toString();
-        patientAddress = Address.getText().toString();
-        patientAge = Integer.parseInt(Age.getText().toString());
-        patientDOB = Integer.parseInt(DOB.getText().toString());
-        patientGender = Gender.getText().toString();
-        patientPhoneNumber = Integer.parseInt(PhoneNumber.getText().toString());
-        patientEmergencyContact = EContact.getText().toString();
-        patientEmergencyNumber = Integer.parseInt(ENumber.getText().toString());
-
-
         P_RegisterSubmit = findViewById(R.id.P_RegisterSubmit);
-
-        Patient newPatient = new Patient(patientUsername, patientPassword,patientFirstName,patientSurname,patientAddress,patientAge,patientAge,patientGender,patientPhoneNumber,patientEmergencyContact,patientEmergencyNumber);
 
         P_RegisterSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PatientRegister.this, PatientHomeScreen.class);
-                startActivity(intent);
+
+                patientUsername = Username.getText().toString();
+                patientPassword = Password.getText().toString();
+                patientFirstName = Name.getText().toString();
+                patientSurname = Surname.getText().toString();
+                patientAddress = Address.getText().toString();
+                patientAge = Age.getText().toString();;
+                patientGender = Gender.getText().toString();
+                patientPhoneNumber = PhoneNumber.getText().toString();
+                patientEmergencyContact = EContact.getText().toString();
+                patientEmergencyNumber = ENumber.getText().toString();
+
+                Patient newPatient = new Patient(patientUsername, patientPassword,patientFirstName,patientSurname,patientAddress,patientAge,patientAge,patientGender,patientPhoneNumber,patientEmergencyContact,patientEmergencyNumber);
 
                 CollectionReference dbUser = db.collection("Patient");
                 dbUser.add(newPatient);
+
+                Intent intent = new Intent(PatientRegister.this, PatientHomeScreen.class);
+                startActivity(intent);
+
+
 
 
             }

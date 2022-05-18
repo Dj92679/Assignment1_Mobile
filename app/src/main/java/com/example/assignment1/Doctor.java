@@ -8,10 +8,10 @@ public class Doctor
     private String doctorPassword;
     private String doctorFirstName;
     private String doctorSurname;
-    private int doctorRegoNum;
-    private int doctorPhoneNumber;
+    private String doctorRegoNum;
+    private String doctorPhoneNumber;
 
-    public Doctor(String doctorUsername, String doctorPassword, String doctorFirstName, String doctorSurname,int doctorRegoNum, int doctorPhoneNumber) {
+    public Doctor(String doctorUsername, String doctorPassword, String doctorFirstName, String doctorSurname,String doctorRegoNum, String doctorPhoneNumber) {
         this.doctorUsername = doctorUsername;
         this.doctorPassword = doctorPassword;
         this.doctorFirstName = doctorFirstName;
@@ -52,19 +52,19 @@ public class Doctor
         this.doctorSurname = doctorSurname;
     }
 
-    public int getDoctorRegoNum() {
+    public String getDoctorRegoNum() {
         return doctorRegoNum;
     }
 
-    public void setDoctorRegoNum(int doctorRegoNum) {
+    public void setDoctorRegoNum(String doctorRegoNum) {
         this.doctorRegoNum = doctorRegoNum;
     }
 
-    public int getDoctorPhoneNumber() {
+    public String getDoctorPhoneNumber() {
         return doctorPhoneNumber;
     }
 
-    public void setDoctorPhoneNumber(int doctorPhoneNumber) {
+    public void setDoctorPhoneNumber(String doctorPhoneNumber) {
         this.doctorPhoneNumber = doctorPhoneNumber;
     }
 }

@@ -7,14 +7,14 @@ public class Patient
     private String patientFirstname;
     private String patientSurname;
     private String patientAddress;
-    private int patientAge;
-    private int patientDOB;
+    private String patientAge;
+    private String patientDOB;
     private String patientGender;
-    private double patientPhoneNumber;
+    private String patientPhoneNumber;
     private String patientEmergencyContact;
-    private double patientEmergencyNumber;
+    private String patientEmergencyNumber;
 
-    public Patient(String patientUsername, String patientPassword, String patientFirstname, String patientSurname, String patientAddress, int patientAge, int patientDOB, String patientGender, double patientPhoneNumber, String patientEmergencyContact, double patientEmergencyNumber) {
+    public Patient(String patientUsername, String patientPassword, String patientFirstname, String patientSurname, String patientAddress, String patientAge, String patientDOB, String patientGender, String patientPhoneNumber, String patientEmergencyContact, String patientEmergencyNumber) {
         this.patientUsername = patientUsername;
         this.patientPassword = patientPassword;
         this.patientFirstname = patientFirstname;
@@ -74,20 +74,20 @@ public class Patient
     }
 
     //Getter and Setter for Patient Age
-    public int getPatientAge() {
+    public String getPatientAge() {
         return patientAge;
     }
 
-    public void setPatientAge(int patientAge) {
+    public void setPatientAge(String patientAge) {
         this.patientAge = patientAge;
     }
 
     //Getter and Setter for Patient Date of Birth
-    public int getPatientDOB() {
+    public String getPatientDOB() {
         return patientDOB;
     }
 
-    public void setPatientDOB(int patientDOB) {
+    public void setPatientDOB(String patientDOB) {
         this.patientDOB = patientDOB;
     }
 
@@ -101,11 +101,11 @@ public class Patient
     }
 
     //Getter and Setter for Patient Phone Numbers
-    public double getPatientPhoneNumber() {
+    public String getPatientPhoneNumber() {
         return patientPhoneNumber;
     }
 
-    public void setPatientPhoneNumber(double patientPhoneNumber) {
+    public void setPatientPhoneNumber(String patientPhoneNumber) {
         this.patientPhoneNumber = patientPhoneNumber;
     }
 
@@ -119,11 +119,11 @@ public class Patient
     }
 
     //Getter and Setter for Patient Emergency Contact Numbers
-    public double getPatientEmergencyNumber() {
+    public String getPatientEmergencyNumber() {
         return patientEmergencyNumber;
     }
 
-    public void setPatientEmergencyNumber(double patientEmergencyNumber) {
+    public void setPatientEmergencyNumber(String patientEmergencyNumber) {
         this.patientEmergencyNumber = patientEmergencyNumber;
     }
 }

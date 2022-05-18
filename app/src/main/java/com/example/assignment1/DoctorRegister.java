@@ -8,16 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class DoctorRegister extends AppCompatActivity {
 
     Button D_RegisterSubmit;
     EditText Username, Password, D_Name, D_Surname, D_RegNo, D_Number;
-    String doctorUsername, doctorPassword, doctorFirstName, doctorSurname;
-    int doctorRegNum, doctorContact;
+    String doctorUsername, doctorPassword, doctorFirstName, doctorSurname, doctorRegNum, doctorContact;
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseFirestore d_db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,22 +31,30 @@ public class DoctorRegister extends AppCompatActivity {
         D_RegNo = findViewById(R.id.D_RegisterRegNo);
         D_Number = findViewById(R.id.D_RegisterNumber);
 
-        doctorUsername = Username.getText().toString();
-        doctorPassword = Password.getText().toString();
-        doctorFirstName = D_Name.getText().toString();
-        doctorSurname = D_Surname.getText().toString();
-        doctorRegNum = Integer.parseInt(D_RegNo.getText().toString());
-        doctorContact = Integer.parseInt(D_Number.getText().toString());
+
 
         D_RegisterSubmit = findViewById(R.id.D_RegisterSubmit);
-
-        Doctor newDoctor = new Doctor(doctorUsername,doctorPassword,doctorFirstName,doctorSurname,doctorRegNum,doctorContact);
 
         D_RegisterSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                doctorUsername = Username.getText().toString();
+                doctorPassword = Password.getText().toString();
+                doctorFirstName = D_Name.getText().toString();
+                doctorSurname = D_Surname.getText().toString();
+                doctorRegNum = D_RegNo.getText().toString();
+                doctorContact = D_Number.getText().toString();
+
+                Doctor newDoctor = new Doctor(doctorUsername,doctorPassword,doctorFirstName,doctorSurname,doctorRegNum,doctorContact);
+
+                CollectionReference doctorDBUser = d_db.collection("Doctor");
+                doctorDBUser.add(newDoctor);
+
                 Intent intent = new Intent(DoctorRegister.this, DoctorMainScreen.class);
                 startActivity(intent);
+
+
             }
         });
     }
