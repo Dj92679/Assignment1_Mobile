@@ -14,6 +14,19 @@ public class Patient
     private String patientEmergencyContact;
     private double patientEmergencyNumber;
 
+    public Patient(String patientUsername, String patientPassword, String patientFirstname, String patientSurname, String patientAddress, int patientAge, int patientDOB, String patientGender, double patientPhoneNumber, String patientEmergencyContact, double patientEmergencyNumber) {
+        this.patientUsername = patientUsername;
+        this.patientPassword = patientPassword;
+        this.patientFirstname = patientFirstname;
+        this.patientSurname = patientSurname;
+        this.patientAddress = patientAddress;
+        this.patientAge = patientAge;
+        this.patientDOB = patientDOB;
+        this.patientGender = patientGender;
+        this.patientPhoneNumber = patientPhoneNumber;
+        this.patientEmergencyContact = patientEmergencyContact;
+        this.patientEmergencyNumber = patientEmergencyNumber;
+    }
 
     //Getter and Setter for Patient Usernames
     public String getPatientUsername() {

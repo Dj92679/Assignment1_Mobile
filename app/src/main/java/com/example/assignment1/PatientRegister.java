@@ -8,10 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 public class PatientRegister extends AppCompatActivity {
 
     Button P_RegisterSubmit;
     EditText Username, Password, Name, Surname,Address, Age, DOB, Gender, PhoneNumber, EContact, ENumber;
+    String patientUsername, patientPassword, patientFirstName, patientSurname, patientAddress, patientGender, patientEmergencyContact;
+    int patientAge, patientDOB, patientPhoneNumber, patientEmergencyNumber;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +41,33 @@ public class PatientRegister extends AppCompatActivity {
         EContact = findViewById(R.id.P_RegisterEContact);
         ENumber = findViewById(R.id.P_RegisterENumber);
 
+        patientUsername = Username.getText().toString();
+        patientPassword = Password.getText().toString();
+        patientFirstName = Name.getText().toString();
+        patientSurname = Surname.getText().toString();
+        patientAddress = Address.getText().toString();
+        patientAge = Integer.parseInt(Age.getText().toString());
+        patientDOB = Integer.parseInt(DOB.getText().toString());
+        patientGender = Gender.getText().toString();
+        patientPhoneNumber = Integer.parseInt(PhoneNumber.getText().toString());
+        patientEmergencyContact = EContact.getText().toString();
+        patientEmergencyNumber = Integer.parseInt(ENumber.getText().toString());
+
+
         P_RegisterSubmit = findViewById(R.id.P_RegisterSubmit);
+
+        Patient newPatient = new Patient(patientUsername, patientPassword,patientFirstName,patientSurname,patientAddress,patientAge,patientAge,patientGender,patientPhoneNumber,patientEmergencyContact,patientEmergencyNumber);
 
         P_RegisterSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PatientRegister.this, PatientHomeScreen.class);
                 startActivity(intent);
+
+                CollectionReference dbUser = db.collection("Patient");
+                dbUser.add(newPatient);
+
+
             }
         });
     }

@@ -20,7 +20,10 @@
     <string name="D_FName">Doctor First Name</string>
     <string name="D_Surname">Doctor Surname</string>
     <string name="D_RegNo">Doctor Registration Number</string>
-    <string name="D_PhoneNumber">Doctor Phone Number</string>
+    <string name="P_GP">GP</string>
+    <string name="P_PrevMedHis">Patient Previous Medical History</string>
+    <string name="P_Religion">Patient Religion</string>
+    <string name="P_Incident">Patient Incident</string>
 
 
     </resources>

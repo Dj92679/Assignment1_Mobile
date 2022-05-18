@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class DoctorMainScreen extends AppCompatActivity {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     Button D_Settings;
 

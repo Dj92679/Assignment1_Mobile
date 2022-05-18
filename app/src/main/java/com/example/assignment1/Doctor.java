@@ -1,13 +1,24 @@
 package com.example.assignment1;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class Doctor
 {
     private String doctorUsername;
     private String doctorPassword;
     private String doctorFirstName;
     private String doctorSurname;
-    private String doctorRegoNum;
-    private String doctorPhoneNumber;
+    private int doctorRegoNum;
+    private int doctorPhoneNumber;
+
+    public Doctor(String doctorUsername, String doctorPassword, String doctorFirstName, String doctorSurname,int doctorRegoNum, int doctorPhoneNumber) {
+        this.doctorUsername = doctorUsername;
+        this.doctorPassword = doctorPassword;
+        this.doctorFirstName = doctorFirstName;
+        this.doctorSurname = doctorSurname;
+        this.doctorRegoNum = doctorRegoNum;
+        this.doctorPhoneNumber = doctorPhoneNumber;
+    }
 
     public String getDoctorUsername() {
         return doctorUsername;
@@ -41,19 +52,19 @@ public class Doctor
         this.doctorSurname = doctorSurname;
     }
 
-    public String getDoctorRegoNum() {
+    public int getDoctorRegoNum() {
         return doctorRegoNum;
     }
 
-    public void setDoctorRegoNum(String doctorRegoNum) {
+    public void setDoctorRegoNum(int doctorRegoNum) {
         this.doctorRegoNum = doctorRegoNum;
     }
 
-    public String getDoctorPhoneNumber() {
+    public int getDoctorPhoneNumber() {
         return doctorPhoneNumber;
     }
 
-    public void setDoctorPhoneNumber(String doctorPhoneNumber) {
+    public void setDoctorPhoneNumber(int doctorPhoneNumber) {
         this.doctorPhoneNumber = doctorPhoneNumber;
     }
 }
