@@ -53,6 +53,8 @@ public class DoctorRegister extends AppCompatActivity {
 
                 Intent intent = new Intent(DoctorRegister.this, DoctorMainScreen.class);
                 startActivity(intent);
+                
+                
 
 
             }

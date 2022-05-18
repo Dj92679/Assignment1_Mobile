@@ -11,7 +11,14 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class Login extends AppCompatActivity {
+
+    FirebaseFirestore loginDB = FirebaseFirestore.getInstance();
 
     ImageButton btnCall;
     Button LoginBtn1, RegisterBtnLogin;
@@ -47,6 +54,23 @@ public class Login extends AppCompatActivity {
         LoginBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //not finished
+                DocumentReference d_DocRef = loginDB.collection("Doctor").document(/*user's document*/);
+                d_DocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Doctor doctor = documentSnapshot.toObject(Doctor.class);
+                    }
+                });
+                //not finished get help + extension
+                DocumentReference p_DocRef = loginDB.collection("Doctor").document(/*user's document*/);
+                p_DocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Patient patient = documentSnapshot.toObject(Patient.class);
+                    }
+                });
+
                 if (Username.getText().toString().equals(DoctorUser) && Password.getText().toString().equals(DoctorPass))
                 {
                             Intent intent = new Intent(Login.this, DoctorMainScreen.class);
@@ -69,6 +93,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Login.this, PatientOrDoctor.class);
                 startActivity(intent);
+
+
             }
         });
 
