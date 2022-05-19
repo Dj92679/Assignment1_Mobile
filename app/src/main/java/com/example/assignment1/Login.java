@@ -1,20 +1,24 @@
 package com.example.assignment1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class Login extends AppCompatActivity {
 
@@ -35,11 +39,6 @@ public class Login extends AppCompatActivity {
         Username = findViewById(R.id.etxtUserLogin);
         Password = findViewById(R.id.etxtUserPass);
 
-        DoctorUser = "HVDHBDoc";
-        DoctorPass = "Password123";
-        PatientUser = "TestUser";
-        PatientPass = "TestPass1";
-
         btnCall = findViewById(R.id.callMedical);
 
         btnCall.setOnClickListener(new View.OnClickListener() {
@@ -54,49 +53,64 @@ public class Login extends AppCompatActivity {
         LoginBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //not finished
-                DocumentReference d_DocRef = loginDB.collection("Doctor").document(/*user's document*/);
-                d_DocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        Doctor doctor = documentSnapshot.toObject(Doctor.class);
-                    }
-                });
                 //not finished get help + extension
-                DocumentReference p_DocRef = loginDB.collection("Doctor").document(/*user's document*/);
-                p_DocRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        Patient patient = documentSnapshot.toObject(Patient.class);
-                    }
-                });
+                loginDB.collection("Patient")
+                        .whereEqualTo("patientUsername", PatientUser)
+                        .get()
+                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                Log.i("Login", "Get's the data");
+                                if (task.isSuccessful()) {
+                                    Log.i("Login", "isSuccessful");
+                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                        Patient loginPatient = document.toObject(Patient.class);
+                                        Log.i("Login", "Storing into CLass");
+                                    }
 
-                if (Username.getText().toString().equals(DoctorUser) && Password.getText().toString().equals(DoctorPass))
-                {
-                            Intent intent = new Intent(Login.this, DoctorMainScreen.class);
-                            startActivity(intent);
-                }
-                else if (Username.getText().toString().equals(PatientUser)  && Password.getText().toString().equals( PatientPass))
-                {
-                            Intent intent = new Intent(Login.this, PatientHomeScreen.class);
-                            startActivity(intent);
-                }
-                else
-                {
-                    Toast.makeText(Login.this, "Please Enter a Valid Input", Toast.LENGTH_LONG).show();
-                }
+                                }
+
+                                loginDB.collection("Doctor")
+                                        .whereEqualTo("doctorUsername", DoctorUser)
+                                        .get()
+                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                Log.i("Login", "Get's the data");
+                                                if (task.isSuccessful()) {
+                                                    Log.i("Login", "isSuccessful");
+                                                    for (QueryDocumentSnapshot document : task.getResult()) {
+                                                        Doctor LoginDoctor = document.toObject(Doctor.class);
+                                                    }
+
+                                                }
+
+                                                if (Username.getText().toString().equals(DoctorUser) && Password.getText().toString().equals(DoctorPass)) {
+                                                    Intent intent = new Intent(Login.this, DoctorMainScreen.class);
+                                                    startActivity(intent);
+                                                } else if (Username.getText().toString().equals(PatientUser) && Password.getText().toString().equals(PatientPass)) {
+                                                    Intent intent = new Intent(Login.this, PatientHomeScreen.class);
+                                                    startActivity(intent);
+                                                } else {
+                                                    Toast.makeText(Login.this, "Please Enter a Valid Input", Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+
+                                        });
+
+                                RegisterBtnLogin.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        Intent intent = new Intent(Login.this, PatientOrDoctor.class);
+                                        startActivity(intent);
+
+
+                                    }
+                                });
+
+                            }
+                        });
             }
         });
-
-        RegisterBtnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, PatientOrDoctor.class);
-                startActivity(intent);
-
-
-            }
-        });
-
     }
 }
