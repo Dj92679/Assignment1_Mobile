@@ -19,7 +19,7 @@ public class PatientRegister extends AppCompatActivity {
 
     Button P_RegisterSubmit;
     EditText Username, Password, Name, Surname,Address, Age, DOB, Gender, PhoneNumber, EContact, ENumber;
-    String patientUsername, patientPassword, patientFirstName, patientSurname, patientAddress, patientGender, patientEmergencyContact, patientAge, patientDOB, patientPhoneNumber, patientEmergencyNumber;;
+    String patientUsername, patientPassword, patientFirstName, patientSurname, patientAddress, patientGender, patientEmergencyContact, patientAge, patientDOB, patientPhoneNumber, patientEmergencyNumber;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -51,7 +51,8 @@ public class PatientRegister extends AppCompatActivity {
                 patientFirstName = Name.getText().toString();
                 patientSurname = Surname.getText().toString();
                 patientAddress = Address.getText().toString();
-                patientAge = Age.getText().toString();;
+                patientAge = Age.getText().toString();
+                patientDOB = DOB.getText().toString();
                 patientGender = Gender.getText().toString();
                 patientPhoneNumber = PhoneNumber.getText().toString();
                 patientEmergencyContact = EContact.getText().toString();
@@ -64,9 +65,6 @@ public class PatientRegister extends AppCompatActivity {
 
                 Intent intent = new Intent(PatientRegister.this, PatientHomeScreen.class);
                 startActivity(intent);
-
-
-
 
             }
         });
