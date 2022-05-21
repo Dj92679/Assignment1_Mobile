@@ -80,45 +80,43 @@ public class Login extends AppCompatActivity {
                                     Log.i("Login", "Data not retrieved");
                                 }
 
-                                loginDB.collection("Doctor")
-                                        .whereEqualTo("doctorUsername", doctorUser)
-                                        .get()
-                                        .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                                                if (task.isSuccessful()) {
-                                                    DocumentSnapshot document = task.getResult().getDocuments().get(0);
-                                                    Doctor loginDoctor = new Doctor(document.getString("doctorUsername"), document.getString("doctorPassword"), document.getString("doctorFirstName"), document.getString("doctorSurname"), document.getString("doctorRegNumber"),document.getString("doctorPhoneNumber"));
-                                                }
-                                                else
-                                                {
+                      loginDB.collection("Doctor")
+                               .whereEqualTo("doctorUsername", doctorUser)
+                               .get()
+                               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                            if (task.isSuccessful()) {
+                                               DocumentSnapshot documentD = task.getResult().getDocuments().get(0);
+                                               Doctor loginDoctor = new Doctor(documentD.getString("doctorUsername"), documentD.getString("doctorPassword"), documentD.getString("doctorFirstName"), documentD.getString("doctorSurname"), documentD.getString("doctorRegNumber"), documentD.getString("doctorPhoneNumber"));
+                                            }
+                                            else {
                                                     Log.i("Login", "Data not retrieved");
-                                                }
-
-
-                                                if (Username.getText().toString().equals(doctorUser) && Password.getText().toString().equals(doctorPass)) {
-                                                    Intent intent = new Intent(Login.this, DoctorMainScreen.class);
-                                                    startActivity(intent);
-                                                } else if (Username.getText().toString().equals(patientUser) && Password.getText().toString().equals(patientPass)) {
-                                                    Intent intent = new Intent(Login.this, PatientHomeScreen.class);
-                                                    startActivity(intent);
-                                                } else {
-                                                    Toast.makeText(Login.this, "Please Enter a Valid Input", Toast.LENGTH_LONG).show();
                                                 }
                                             }
 
                                         });
-
-                                RegisterBtnLogin.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        Intent intent = new Intent(Login.this, PatientOrDoctor.class);
-                                        startActivity(intent);
-                                    }
-                                });
-
                             }
                         });
+                if (Username.getText().toString().equals(doctorUser) && Password.getText().toString().equals(doctorPass)) {
+                    Intent intent = new Intent(Login.this, DoctorMainScreen.class);
+                    startActivity(intent);
+                }
+                else if (Username.getText().toString().equals(patientUser) && Password.getText().toString().equals(patientPass)) {
+                    Intent intent = new Intent(Login.this, PatientHomeScreen.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(Login.this, "Please Enter a Valid Input", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        RegisterBtnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, PatientOrDoctor.class);
+                startActivity(intent);
             }
         });
     }
