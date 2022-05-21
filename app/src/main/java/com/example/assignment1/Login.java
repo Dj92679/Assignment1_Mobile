@@ -59,7 +59,8 @@ public class Login extends AppCompatActivity {
 
         LoginBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 patientUser = Username.getText().toString();
                 patientPass = Password.getText().toString();
                 doctorUser = Username.getText().toString();
@@ -83,19 +84,21 @@ public class Login extends AppCompatActivity {
                       loginDB.collection("Doctor")
                                .whereEqualTo("doctorUsername", doctorUser)
                                .get()
-                               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
+                               {
                                     @Override
-                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task)
+                                    {
                                             if (task.isSuccessful()) {
                                                DocumentSnapshot documentD = task.getResult().getDocuments().get(0);
                                                Doctor loginDoctor = new Doctor(documentD.getString("doctorUsername"), documentD.getString("doctorPassword"), documentD.getString("doctorFirstName"), documentD.getString("doctorSurname"), documentD.getString("doctorRegNumber"), documentD.getString("doctorPhoneNumber"));
                                             }
-                                            else {
+                                            else
+                                            {
                                                     Log.i("Login", "Data not retrieved");
-                                                }
                                             }
-
-                                        });
+                                    }
+                               });
                             }
                         });
                 if (Username.getText().toString().equals(doctorUser) && Password.getText().toString().equals(doctorPass)) {
@@ -109,7 +112,9 @@ public class Login extends AppCompatActivity {
                 else {
                     Toast.makeText(Login.this, "Please Enter a Valid Input", Toast.LENGTH_LONG).show();
                 }
+
             }
+
         });
 
         RegisterBtnLogin.setOnClickListener(new View.OnClickListener() {
