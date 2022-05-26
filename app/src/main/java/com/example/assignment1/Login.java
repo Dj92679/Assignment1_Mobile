@@ -81,7 +81,7 @@ public class Login extends AppCompatActivity {
                                     Log.i("Login", "Data not retrieved");
                                 }
 
-                      loginDB.collection("Doctor")
+                    /*  loginDB.collection("Doctor")
                                .whereEqualTo("doctorUsername", doctorUser)
                                .get()
                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity {
                                                     Log.i("Login", "Data not retrieved");
                                             }
                                     }
-                               });
+                               });*/
                             }
                         });
                 if (Username.getText().toString().equals(doctorUser) && Password.getText().toString().equals(doctorPass)) {
