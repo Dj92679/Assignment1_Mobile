@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_doctor_login.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_doctor_main_screen.xml" value="0.264" />
         <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_doctor_register.xml" value="0.264" />
-        <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_login.xml" value="0.176" />
+        <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_paitent_home_screen.xml" value="0.264" />
         <entry key="..\:/Users/michael/AndroidStudioProjects/Assignment1/app/src/main/res/layout/activity_patient_forms.xml" value="0.2" />

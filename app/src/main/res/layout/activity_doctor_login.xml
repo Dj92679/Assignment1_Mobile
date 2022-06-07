@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    tools:context=".DoctorLogin">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Patient Login"
+        android:text="Doctor Login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
         android:textColor="@color/black"
@@ -42,7 +42,7 @@
     </TextView>
 
     <EditText
-        android:id="@+id/etxtUserLogin"
+        android:id="@+id/etxtDocLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Enter Username"
@@ -67,7 +67,7 @@
     </TextView>
 
     <EditText
-        android:id="@+id/etxtUserPass"
+        android:id="@+id/etxtDocPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="190dp"
@@ -99,39 +99,39 @@
     </TextView>
 
     <Button
-        android:id="@+id/swapDoctor"
+        android:id="@+id/PLogin"
         style="@style/Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="350dp"
-        android:text="Click to login as doctor Here"
+        android:text="Click to login as patient Here"
         android:textColor="@color/black">
 
     </Button>
 
     <Button
-        android:id="@+id/btn_LoginFirst"
+        android:id="@+id/btn_Login2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/dhbteal"
-        android:text="Login"
-        android:fontFamily="sans-serif-black"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp">
+        android:layout_marginTop="400dp"
+        android:backgroundTint="@color/dhbteal"
+        android:fontFamily="sans-serif-black"
+        android:text="Login">
 
     </Button>
 
     <Button
         android:id="@+id/RegisterBtn_First"
+        style="@style/Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Borderless"
-        android:text="Register"
-        android:textColor="@color/black"
-        android:fontFamily="sans-serif-black"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp">
+        android:layout_marginTop="450dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Register"
+        android:textColor="@color/black">
 
     </Button>
 

@@ -26,8 +26,8 @@ public class Login extends AppCompatActivity {
     FirebaseFirestore loginDB = FirebaseFirestore.getInstance();
 
     ImageButton btnCall;
-    Button LoginBtn1, RegisterBtnLogin;
-    String doctorUser, doctorPass, patientUser, patientPass;
+    Button LoginBtn1, RegisterBtnLogin, swapDoc;
+    String  patientUser, patientPass;
     EditText Username,Password;
 
     @Override
@@ -39,13 +39,13 @@ public class Login extends AppCompatActivity {
         RegisterBtnLogin = findViewById(R.id.RegisterBtn_First);
         Username = findViewById(R.id.etxtUserLogin);
         Password = findViewById(R.id.etxtUserPass);
+        swapDoc = findViewById(R.id.swapDoctor);
 
         btnCall = findViewById(R.id.callMedical);
 
         patientUser = Username.getText().toString();
         patientPass = Password.getText().toString();
-        doctorUser = Username.getText().toString();
-        doctorUser = Password.getText().toString();
+
 
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,9 +63,6 @@ public class Login extends AppCompatActivity {
             {
                 patientUser = Username.getText().toString();
                 patientPass = Password.getText().toString();
-                doctorUser = Username.getText().toString();
-                doctorUser = Password.getText().toString();
-                //not finished get help not storing into class
                 loginDB.collection("Patient")
                         .whereEqualTo("patientUsername", patientUser)
                         .get()
@@ -101,11 +98,8 @@ public class Login extends AppCompatActivity {
                                });*/
                             }
                         });
-                if (Username.getText().toString().equals(doctorUser) && Password.getText().toString().equals(doctorPass)) {
-                    Intent intent = new Intent(Login.this, DoctorMainScreen.class);
-                    startActivity(intent);
-                }
-                else if (Username.getText().toString().equals(patientUser) && Password.getText().toString().equals(patientPass)) {
+
+                if (Username.getText().toString().equals(patientUser) && Password.getText().toString().equals(patientPass)) {
                     Intent intent = new Intent(Login.this, PatientHomeScreen.class);
                     startActivity(intent);
                 }
@@ -121,6 +115,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Login.this, PatientOrDoctor.class);
+                startActivity(intent);
+            }
+        });
+
+        swapDoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this, DoctorLogin.class);
                 startActivity(intent);
             }
         });
