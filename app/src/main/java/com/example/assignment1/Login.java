@@ -77,25 +77,6 @@ public class Login extends AppCompatActivity {
                                 {
                                     Log.i("Login", "Data not retrieved");
                                 }
-
-                    /*  loginDB.collection("Doctor")
-                               .whereEqualTo("doctorUsername", doctorUser)
-                               .get()
-                               .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>()
-                               {
-                                    @Override
-                                    public void onComplete(@NonNull Task<QuerySnapshot> task)
-                                    {
-                                            if (task.isSuccessful()) {
-                                               DocumentSnapshot documentD = task.getResult().getDocuments().get(0);
-                                               Doctor loginDoctor = new Doctor(documentD.getString("doctorUsername"), documentD.getString("doctorPassword"), documentD.getString("doctorFirstName"), documentD.getString("doctorSurname"), documentD.getString("doctorRegNumber"), documentD.getString("doctorPhoneNumber"));
-                                            }
-                                            else
-                                            {
-                                                    Log.i("Login", "Data not retrieved");
-                                            }
-                                    }
-                               });*/
                             }
                         });
 

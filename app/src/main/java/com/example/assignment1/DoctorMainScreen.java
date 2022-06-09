@@ -25,7 +25,7 @@ public class DoctorMainScreen extends AppCompatActivity {
         D_Settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DoctorMainScreen.this, Settings.class);
+                Intent intent = new Intent(DoctorMainScreen.this, DoctorSettings.class);
                 startActivity(intent);
             }
         });
