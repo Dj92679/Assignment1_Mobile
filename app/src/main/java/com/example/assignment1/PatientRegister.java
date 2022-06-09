@@ -60,8 +60,7 @@ public class PatientRegister extends AppCompatActivity {
 
                 Patient newPatient = new Patient(patientUsername, patientPassword,patientFirstName,patientSurname,patientAddress,patientAge,patientAge,patientGender,patientPhoneNumber,patientEmergencyContact,patientEmergencyNumber);
 
-                CollectionReference dbUser = db.collection("Patient");
-                dbUser.add(newPatient);
+                db.collection("Patient").document(patientUsername).set(newPatient);
 
                 Intent intent = new Intent(PatientRegister.this, PatientHomeScreen.class);
                 startActivity(intent);

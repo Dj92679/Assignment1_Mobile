@@ -26,17 +26,37 @@
 
     </TextView>
 
-    <Button
-        android:id="@+id/ChangeName"
+    <EditText
+        android:id="@+id/NameChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Borderless"
-        android:textColor="@color/black"
-        android:text="Change Name"
+        android:layout_marginTop="220dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="220dp">
+        android:hint="Change Name">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/ChangeName"
+        style="@style/Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:text="Change Name"
+        android:textColor="@color/black">
 
     </Button>
+
+    <EditText
+        android:id="@+id/AddressChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Change Address">
+
+    </EditText>
 
     <Button
         android:id="@+id/ChangeAddress"
@@ -46,9 +66,19 @@
         android:textColor="@color/black"
         android:text="Change Address"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="290dp">
+        android:layout_marginTop="340dp">
 
     </Button>
+
+    <EditText
+        android:id="@+id/ContactChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_centerHorizontal="true"
+        android:hint="Change Phone Number">
+
+    </EditText>
 
     <Button
         android:id="@+id/ChangeContact"
@@ -58,9 +88,19 @@
         android:textColor="@color/black"
         android:text="Change Contact Details"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="360dp">
+        android:layout_marginTop="430dp">
 
     </Button>
+
+    <EditText
+        android:id="@+id/EDetailChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="470dp"
+        android:hint="Change Emergency Contact">
+
+    </EditText>
 
     <Button
         android:id="@+id/ChangeEDetails"
@@ -70,7 +110,7 @@
         android:textColor="@color/black"
         android:text="Change Emergency Details"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="430dp">
+        android:layout_marginTop="500dp">
 
     </Button>
 
@@ -82,7 +122,7 @@
         android:textColor="@color/red"
         style="@style/Borderless"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp">
+        android:layout_marginTop="550dp">
 
     </Button>
 

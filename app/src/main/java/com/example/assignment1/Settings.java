@@ -27,6 +27,8 @@ public class Settings extends AppCompatActivity {
         DeleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 db_Delete.collection("Doctor").document(/*"user account"*/)
                         .delete();
             }

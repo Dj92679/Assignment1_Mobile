@@ -27,6 +27,7 @@ public class DoctorLogin extends AppCompatActivity {
     ImageButton btnCall;
     String doctorUser, doctorPass;
     EditText docUsername, docPassword;
+    String id,u,p,n,s,r,ph;
 
 
     @Override
@@ -39,6 +40,8 @@ public class DoctorLogin extends AppCompatActivity {
         swapPatient = findViewById(R.id.PLogin);
         docUsername = findViewById(R.id.etxtDocLogin);
         docPassword = findViewById(R.id.etxtDocPass);
+
+
 
         btnCall = findViewById(R.id.callMedical);
 
@@ -65,6 +68,7 @@ public class DoctorLogin extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task)
                             {
+                                Log.i("Data", "Gets Data");
                                 if (task.isSuccessful()) {
                                     DocumentSnapshot documentD = task.getResult().getDocuments().get(0);
                                     Doctor loginDoctor = new Doctor(documentD.getString("doctorUsername"), documentD.getString("doctorPassword"), documentD.getString("doctorFirstName"), documentD.getString("doctorSurname"), documentD.getString("doctorRegNumber"), documentD.getString("doctorPhoneNumber"));

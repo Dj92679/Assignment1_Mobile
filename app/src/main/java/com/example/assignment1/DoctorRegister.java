@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -47,9 +48,10 @@ public class DoctorRegister extends AppCompatActivity {
                 doctorContact = D_Number.getText().toString();
 
                 Doctor newDoctor = new Doctor(doctorUsername,doctorPassword,doctorFirstName,doctorSurname,doctorRegNum,doctorContact);
+                Log.i("Save", "Save data to class");
 
-                CollectionReference doctorDBUser = d_db.collection("Doctor");
-                doctorDBUser.add(newDoctor);
+                d_db.collection("Doctor").document(doctorUsername).set(newDoctor);
+                Log.i("Makes Document","Make Document");
 
                 Intent intent = new Intent(DoctorRegister.this, DoctorMainScreen.class);
                 startActivity(intent);
