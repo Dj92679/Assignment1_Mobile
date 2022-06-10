@@ -1,5 +1,6 @@
 package com.example.assignment1;
 
+import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
@@ -40,6 +41,7 @@ public class LoginTest extends TestCase {
     {
         onView(withId(R.id.etxtUserLogin)).perform(typeText(patientUserTest));
         onView(withId(R.id.etxtUserPass)).perform(typeText(patientPassTest));
+        closeSoftKeyboard();
         onView(withId(R.id.btn_LoginFirst)).perform(click());
     }
 
