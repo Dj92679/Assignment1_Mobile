@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Settings extends AppCompatActivity {
@@ -32,8 +34,16 @@ public class Settings extends AppCompatActivity {
 
                 Patient patient = new Patient(u,p,n,s,add,a,d,g,ph,ec,eph);
 
-                db_Delete.collection("Doctor").document(patient.getPatientUsername())
-                        .delete();
+                db_Delete.collection("Patient").document(patient.getPatientUsername())
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.i("Success", "Delete");
+                            }
+                        });
+
+
                 Intent intent = new Intent(Settings.this, Login.class);
                 startActivity(intent);
 

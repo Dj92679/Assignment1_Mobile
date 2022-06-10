@@ -27,7 +27,7 @@
     </TextView>
 
     <EditText
-        android:id="@+id/NameChange"
+        android:id="@+id/DNameChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
@@ -37,7 +37,7 @@
     </EditText>
 
     <Button
-        android:id="@+id/ChangeName"
+        android:id="@+id/DChangeName"
         style="@style/Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
     </Button>
 
     <Button
-        android:id="@+id/DeleteAccount"
+        android:id="@+id/AccountDelete"
         style="@style/Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
