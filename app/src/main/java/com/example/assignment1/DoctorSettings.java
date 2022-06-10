@@ -40,13 +40,14 @@ public class DoctorSettings extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 Log.i("Success", "Delete");
+                                Intent intent = new Intent(DoctorSettings.this, DoctorLogin.class);
+                                startActivity(intent);
 
                             }
                         });
 
 
-                Intent intent = new Intent(DoctorSettings.this, DoctorLogin.class);
-                startActivity(intent);
+
 
             }
         });
