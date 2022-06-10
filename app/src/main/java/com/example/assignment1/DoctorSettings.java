@@ -40,7 +40,7 @@ public class DoctorSettings extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 Log.i("Success", "Delete");
-                                //test
+
                             }
                         });
 
