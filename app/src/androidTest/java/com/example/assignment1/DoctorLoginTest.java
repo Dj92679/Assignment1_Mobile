@@ -1,14 +1,14 @@
 package com.example.assignment1;
 
+import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.junit.Assert.*;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
-
-import junit.framework.TestCase;
 
 import org.junit.After;
 import org.junit.Before;
@@ -18,34 +18,28 @@ import org.junit.runner.RunWith;
 
 @RunWith(AndroidJUnit4.class)
 
-public class LoginTest extends TestCase {
+public class DoctorLoginTest {
 
-    String doctorUserTest, doctorPassTest, patientUserTest, patientPassTest;
-    Login login;
+    String doctorUserTest, doctorPassTest;
 
     @Rule
-    public ActivityTestRule<Login> activityTestRule = new ActivityTestRule<>(Login.class);
+    public ActivityTestRule<DoctorLogin> activityTestRule = new ActivityTestRule<>(DoctorLogin.class);
 
     @Before
     public void setUp() throws Exception {
         doctorUserTest = "DrFrank";
         doctorPassTest = "BrokenBone";
-        patientPassTest = "Password1234";
-        patientUserTest = "JSmith4";
-        super.setUp();
     }
-
-    @Test
-    public void patientLogin()
-    {
-        onView(withId(R.id.etxtUserLogin)).perform(typeText(patientUserTest));
-        onView(withId(R.id.etxtUserPass)).perform(typeText(patientPassTest));
-        onView(withId(R.id.btn_LoginFirst)).perform(click());
-    }
-
-
 
     @After
     public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void patientDoctor() {
+        onView(withId(R.id.etxtDocLogin)).perform(typeText(doctorUserTest));
+        onView(withId(R.id.etxtDocPass)).perform(typeText(doctorPassTest));
+        closeSoftKeyboard();
+        onView(withId(R.id.btn_Login2)).perform(click());
     }
 }
