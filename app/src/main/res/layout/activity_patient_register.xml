@@ -160,12 +160,12 @@
         android:id="@+id/P_RegisterAge"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:hint="Enter Age"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginTop="360dp"
         android:layout_marginLeft="135dp"
-        android:textSize="12dp"
-        android:inputType="number">
+        android:layout_marginTop="360dp"
+        android:fontFamily="sans-serif-black"
+        android:hint="Enter Age"
+        android:inputType="number"
+        android:textSize="12dp">
 
     </EditText>
 
