@@ -82,6 +82,7 @@ public class Login extends AppCompatActivity {
 
                 if (Username.getText().toString().equals(patientUser) && Password.getText().toString().equals(patientPass)) {
                     Intent intent = new Intent(Login.this, PatientHomeScreen.class);
+                    intent.putExtra("patientUserName",patientUser);
                     startActivity(intent);
                 }
                 else {

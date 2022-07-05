@@ -15,7 +15,7 @@ public class Settings extends AppCompatActivity {
 
     FirebaseFirestore db_Delete = FirebaseFirestore.getInstance();
     Button DeleteAccount, ChangeAddress, ChangeContact, ChangeName, ChangeEContact;
-    String u,p,n,s,add,a,d,g,ph,ec,eph;
+    String u,p,n,s,add,a,d,g,ph,ec,eph,patientUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +32,11 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Patient patient = new Patient(u,p,n,s,add,a,d,g,ph,ec,eph);
+                Intent newintent = getIntent();
+                patientUsername = newintent.getStringExtra("patientUserName");
 
-                db_Delete.collection("Patient").document(patient.getPatientUsername())
-                        .delete()
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.i("Success", "Delete");
-                            }
-                        });
-
-
+                db_Delete.collection("Patient").document(patientUsername)
+                        .delete();
                 Intent intent = new Intent(Settings.this, Login.class);
                 startActivity(intent);
 

@@ -10,6 +10,7 @@ import android.widget.Button;
 public class PatientHomeScreen extends AppCompatActivity {
 
     Button CreateForm, ViewOldForms, P_Settings;
+    String patientUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,9 @@ public class PatientHomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PatientHomeScreen.this, Settings.class);
+                Intent newIntent = getIntent();
+                patientUser = newIntent.getStringExtra("patientUserName");
+                intent.putExtra("patientUserName",patientUser);
                 startActivity(intent);
             }
         });
