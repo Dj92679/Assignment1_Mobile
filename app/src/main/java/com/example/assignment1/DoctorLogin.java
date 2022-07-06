@@ -81,6 +81,7 @@ public class DoctorLogin extends AppCompatActivity {
                         });
                 if (docUsername.getText().toString().equals(doctorUser) && docPassword.getText().toString().equals(doctorPass)) {
                     Intent intent = new Intent(DoctorLogin.this, DoctorMainScreen.class);
+                    intent.putExtra("doctorUserName", doctorUser);
                     startActivity(intent);
 
                 }

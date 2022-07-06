@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class DoctorSettings extends AppCompatActivity {
     EditText DNameChange;
     Button DChangeName, DeleteAccount;
-    String u,p,n,s,r,ph;
+    String u,p,n,s,r,ph, doctorUserName;
 
     FirebaseFirestore dbd_Delete = FirebaseFirestore.getInstance();
 
@@ -32,23 +32,13 @@ public class DoctorSettings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Doctor doctor = new Doctor(u,p,n,s,r,ph);
+                Intent newIntent = getIntent();
+                doctorUserName = newIntent.getStringExtra("doctorUserName");
 
-                dbd_Delete.collection("Doctor").document(doctor.getDoctorUsername())
-                        .delete()
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.i("Success", "Delete");
+                dbd_Delete.collection("Doctor").document(doctorUserName)
+                        .delete();
                                 Intent intent = new Intent(DoctorSettings.this, DoctorLogin.class);
                                 startActivity(intent);
-
-                            }
-                        });
-
-
-
-
             }
         });
     }

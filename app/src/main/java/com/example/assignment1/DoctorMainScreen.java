@@ -14,6 +14,7 @@ public class DoctorMainScreen extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     Button D_Settings;
+    String doctorUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,9 @@ public class DoctorMainScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DoctorMainScreen.this, DoctorSettings.class);
+                Intent newIntent = getIntent();
+                doctorUser = newIntent.getStringExtra("doctorUserName");
+                intent.putExtra("doctorUserName",doctorUser);
                 startActivity(intent);
             }
         });
