@@ -36,10 +36,6 @@ public class Settings extends AppCompatActivity {
         contactChange = findViewById(R.id.ContactChange);
         econtactChange = findViewById(R.id.EDetailChange);
 
-        patientAddress = addressChange.getText().toString();
-        patientContact = contactChange.getText().toString();
-        patientEContact = econtactChange.getText().toString();
-
         Intent newintent = getIntent();
         patientUsername = newintent.getStringExtra("patientUserName");
 
@@ -66,6 +62,38 @@ public class Settings extends AppCompatActivity {
                 }
             });
 
+        ChangeAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DocumentReference DocRef = db_Delete.collection("Patient").document(patientUsername);
+                patientAddress = addressChange.getText().toString();
+                DocRef.update("patientAddress",patientAddress);
+                Intent intent = new Intent(Settings.this, Login.class);
+                startActivity(intent);
+            }
+        });
+
+        ChangeContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DocumentReference DocRef = db_Delete.collection("Patient").document(patientUsername);
+                patientContact = contactChange.getText().toString();
+                DocRef.update("patientContact",patientContact);
+                Intent intent = new Intent(Settings.this, Login.class);
+                startActivity(intent);
+            }
+        });
+
+        ChangeEContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DocumentReference DocRef = db_Delete.collection("Patient").document(patientUsername);
+                patientEContact = econtactChange.getText().toString();
+                DocRef.update("patientEContact",patientEContact);
+                Intent intent = new Intent(Settings.this, Login.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
