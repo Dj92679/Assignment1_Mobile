@@ -62,7 +62,7 @@ public class PatientRegister extends AppCompatActivity {
 
                 db.collection("Patient").document(patientUsername).set(newPatient);
 
-                Intent intent = new Intent(PatientRegister.this, PatientHomeScreen.class);
+                Intent intent = new Intent(PatientRegister.this, Login.class);
                 startActivity(intent);
 
             }

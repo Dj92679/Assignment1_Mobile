@@ -7,15 +7,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Settings extends AppCompatActivity {
 
     FirebaseFirestore db_Delete = FirebaseFirestore.getInstance();
     Button DeleteAccount, ChangeAddress, ChangeContact, ChangeName, ChangeEContact;
-    String u,p,n,s,add,a,d,g,ph,ec,eph,patientUsername;
+    String patientUsername, etxtPatientUser, patientContact, patientEContact, patientAddress;
+    EditText nameChange, addressChange, contactChange, econtactChange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +31,21 @@ public class Settings extends AppCompatActivity {
         ChangeName =  findViewById(R.id.ChangeName);
         ChangeEContact = findViewById(R.id.ChangeEDetails);
 
+        nameChange = findViewById(R.id.NameChange);
+        addressChange = findViewById(R.id.AddressChange);
+        contactChange = findViewById(R.id.ContactChange);
+        econtactChange = findViewById(R.id.EDetailChange);
+
+        patientAddress = addressChange.getText().toString();
+        patientContact = contactChange.getText().toString();
+        patientEContact = econtactChange.getText().toString();
+
+        Intent newintent = getIntent();
+        patientUsername = newintent.getStringExtra("patientUserName");
+
         DeleteAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent newintent = getIntent();
-                patientUsername = newintent.getStringExtra("patientUserName");
 
                 db_Delete.collection("Patient").document(patientUsername)
                         .delete();
@@ -42,5 +54,18 @@ public class Settings extends AppCompatActivity {
 
             }
         });
+
+            ChangeName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    DocumentReference DocRef = db_Delete.collection("Patient").document(patientUsername);
+                        etxtPatientUser = nameChange.getText().toString();
+                            DocRef.update("patientFirstname",etxtPatientUser);
+                            Intent intent = new Intent(Settings.this, Login.class);
+                            startActivity(intent);
+                }
+            });
+
+
     }
 }

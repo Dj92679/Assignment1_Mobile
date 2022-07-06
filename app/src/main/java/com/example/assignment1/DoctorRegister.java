@@ -53,7 +53,7 @@ public class DoctorRegister extends AppCompatActivity {
                 d_db.collection("Doctor").document(doctorUsername).set(newDoctor);
                 Log.i("Makes Document","Make Document");
 
-                Intent intent = new Intent(DoctorRegister.this, DoctorMainScreen.class);
+                Intent intent = new Intent(DoctorRegister.this, DoctorLogin.class);
                 startActivity(intent);
                 
                 
