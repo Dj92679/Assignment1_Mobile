@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
 
 public class LoginTest extends TestCase {
 
-    String doctorUserTest, doctorPassTest, patientUserTest, patientPassTest;
+    String patientUserTest, patientPassTest, patientNameChange;
     Login login;
 
     @Rule
@@ -29,10 +29,9 @@ public class LoginTest extends TestCase {
 
     @Before
     public void setUp() throws Exception {
-        doctorUserTest = "DrFrank";
-        doctorPassTest = "BrokenBone";
         patientPassTest = "Password1234";
         patientUserTest = "JSmith4";
+        patientNameChange = "Stevey";
         super.setUp();
     }
 
@@ -43,6 +42,9 @@ public class LoginTest extends TestCase {
         onView(withId(R.id.etxtUserPass)).perform(typeText(patientPassTest));
         closeSoftKeyboard();
         onView(withId(R.id.btn_LoginFirst)).perform(click());
+        onView(withId(R.id.PatientSettings)).perform(click());
+        onView(withId(R.id.NameChange)).perform(typeText(patientNameChange));
+        onView(withId(R.id.ChangeName)).perform(click());
     }
 
 
