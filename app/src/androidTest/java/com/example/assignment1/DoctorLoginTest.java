@@ -41,5 +41,8 @@ public class DoctorLoginTest {
         onView(withId(R.id.etxtDocPass)).perform(typeText(doctorPassTest));
         closeSoftKeyboard();
         onView(withId(R.id.btn_Login2)).perform(click());
+        //start of delete testing
+        onView(withId(R.id.DoctorSettings)).perform(click());
+        onView(withId(R.id.AccountDelete)).perform(click());
     }
 }

@@ -55,14 +55,14 @@
 
     <Button
         android:id="@+id/DoctorSettings"
+        style="@style/Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Borderless"
+        android:layout_marginLeft="322dp"
+        android:layout_marginTop="180dp"
         android:text="Settings"
         android:textColor="@color/dhbteal"
-        android:layout_marginTop="180dp"
-        android:textSize="12dp"
-        android:layout_marginLeft="322dp">
+        android:textSize="12dp">
 
     </Button>
 
